@@ -14,7 +14,6 @@ const RedWineAPI = () => {
     const json = await resp.json();      
     setData(json);
     setLoading(true); //로딩완료
-    
   }
 
   useEffect(() => {
