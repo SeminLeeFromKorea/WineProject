@@ -30,26 +30,24 @@ const WhiteWineList = ( {data} ) => {
         
         <>
             <div className={styled.whitewine_container}>
-            <h3> 화이트 와인 관련 이미지 </h3>
+            <h3> WhiteWine List </h3>
             <ul className={styled.whitewine_wrap}>
             
                 {
                     data.map( (item) =>  /* 데이터 60개만 가져옴 */
-                        <div className={styled.box} key={item.id}>
-                            <li  >
-                                    <div className={styled.imageList}>
-                                        <img src={item.image} alt={item.wine} onClick={handleClick}/>
-                                    </div>
-                                    <div className={styled.textList}>
-                                        <p>{item.id}</p>
-                                        <p>{item.wine}</p>
-                                        <p>{item.location}</p>
-                                        <p>{item.winary}</p>
-                                        <p>{item.rating.average}</p>
-                                        <p>{item.rating.reviews}</p>
-                                    </div>
-                            </li>
-                        </div>
+                        <li key={item.id}>
+                            <div className={styled.imageList}>
+                                <img src={item.image} alt={item.wine} onClick={handleClick}/>
+                            </div>
+                            <div className={styled.textList}>
+                                {/* <p>{item.id}</p> */}
+                                <p>{item.wine}</p>
+                                <p>{item.location}</p>
+                                <p>{item.winary}</p>
+                                <p>{item.rating.average}</p>
+                                <p>{item.rating.reviews}</p>
+                            </div>
+                        </li>
                     )
                 }
 
