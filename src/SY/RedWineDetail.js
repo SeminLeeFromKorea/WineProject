@@ -2,28 +2,32 @@ import styled from './RedWine.module.css';
 
 const RedWineDetail = ()=> {
 
-    return(
+    const wine = sessionStorage.getItem('red_detail');
+    // console.log(JSON.parse(wine));
+    const detailInfo = JSON.parse(wine);
+
+    return(        
+
         <div className={styled.detail_wrap}>
-            {/* float-left */}
             <div >
                 <div className={styled.detailImg_wrap}>
-                    <img ></img>
+                    <img src={detailInfo.redImg} alt={detailInfo.redInfo[0]}/>
                 </div>
             </div>
             <div>
-                <div>제목</div>
-                <div>가격?</div>
+                <div>이름:{detailInfo.redInfo[0]}</div>
                 <div>
-                    <dl>원산지</dl>
-                    <dl>평점</dl>
-                    <dl>리뷰?</dl>
+                    <dl>장소:{detailInfo.redInfo[1]}</dl>
+                    <dl>와이너리:{detailInfo.redInfo[2]}</dl>
+                    <dl>평점:{detailInfo.redInfo[3]}</dl>
+                    <dl>리뷰어:{detailInfo.redInfo[4]}</dl>
                 </div>
                 <div>
-                    <button>하트</button>
+                    <button>하트❤</button>
                     <button>지도보기</button>
                 </div>
             </div>
-
+            {/* 
             <nav>
                 <ul>
                     <li>상품설명</li>
@@ -35,7 +39,7 @@ const RedWineDetail = ()=> {
 
             <div>
                 내요요요요용
-            </div>
+            </div> */}
 
         </div>
     )

@@ -52,7 +52,7 @@ const RedWineAPI = () => {
 
   return (
     <div className={styled.redwine_container}>
-      <RedWineDetail/>
+
       <h3>레드와인 구매창?</h3>
       <RedWineList data={currentPosts(data)}/>
       {/* <RedWineList data={data}/> */}
