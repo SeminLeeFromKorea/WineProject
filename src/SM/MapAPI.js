@@ -8,11 +8,12 @@ const MapAPI = () => {
 
     //	b64d360857aefac8da414760b7e5f360
     useEffect(() => {
-        if (UserAddr === undefined) {
+        if (!UserAddr) {
+            // if (UserAddr === undefined) {
             const container = document.getElementById('map');
             const options = {
                 center: new kakao.maps.LatLng(37.4995, 127.0305),
-                level: 14
+                level: !UserAddr ? 14 : 5
             };
             const map = new kakao.maps.Map(container, options);
 
@@ -34,6 +35,19 @@ const MapAPI = () => {
                     position: new kakao.maps.LatLng(el.FCLTY_LA, el.FCLTY_LO),
                     //마커에 hover시 나타날 title
                     title: el.FCLTY_NM + el.TEL_NO,
+                });
+
+                var iwContent = `<div style="width:300px; padding:5px; text-align:center">${el.FCLTY_NM}<br>${el.TEL_NO}</div>`, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+                var infowindow = new kakao.maps.InfoWindow({
+                    content: iwContent,
+                    removable: iwRemoveable
+                });
+
+                kakao.maps.event.addListener(marker, 'click', function () {
+                    // 마커 위에 인포윈도우를 표시합니다
+                    infowindow.open(map, marker);
                 });
 
                 markers.push(marker);
@@ -104,7 +118,7 @@ const MapAPI = () => {
 
                         });
 
-                        var iwContent = `<div style>${el.FCLTY_NM}<br>${el.TEL_NO}</div>`, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                        var iwContent = `<div style="width:300px; padding: 5px; text-align:center">${el.FCLTY_NM}<br>${el.TEL_NO}</div>`, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                             iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 
                         var infowindow = new kakao.maps.InfoWindow({
