@@ -24,7 +24,6 @@ img{max-width: 100%; height: auto;}
 }
 
 
-
 /* 화이트 와인 리스트 css */
 .whitewine_wrap li { /* 자식 box */
     width: 300px;
@@ -33,8 +32,8 @@ img{max-width: 100%; height: auto;}
 
 .whitewine_wrap .imageList {
     padding: 50px 0;
-    border: 1px solid rgb(202, 202, 202);
-    /* overflow: hidden; */
+    /* border: 1px solid rgb(202, 202, 202); */
+    filter: drop-shadow(4px 4px 4px rgb(136, 136, 136));
 }
 
 .whitewine_wrap li img {
@@ -50,6 +49,7 @@ img{max-width: 100%; height: auto;}
 
 .whitewine_wrap li a {
     /* text-align: center;  ※ 글씨 중간으로 안 가짐*/
+    color: black;
 }
 
 .whitewine_wrap .textList {
