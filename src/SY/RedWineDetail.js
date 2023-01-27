@@ -6,7 +6,7 @@ const RedWineDetail = ()=> {
         <div className={styled.detail_wrap}>
             {/* float-left */}
             <div >
-                <div className={styled.detailImg-wrap}>
+                <div className={styled.detailImg_wrap}>
                     <img ></img>
                 </div>
             </div>
