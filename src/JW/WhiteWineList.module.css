@@ -1,7 +1,13 @@
 /* 화이트 와인 api css  */
-* {margin: 0 auto; padding: 0; list-style: none}
+* {margin: 0 auto; padding: 0; list-style: none; }
 a {text-decoration: none;}
 img{max-width: 100%; height: auto;}
+
+/* font-family: 'Bitter', serif;
+font-family: 'Lobster', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Ubuntu', sans-serif; */
 
 .loading { /* ※중간으로 처리 못함 */
     height: 1000px;
@@ -13,7 +19,10 @@ img{max-width: 100%; height: auto;}
 }
 
 .whitewine_container h3 {
-    margin: 30px 0;
+    margin: 60px 0;
+    font-family: 'Lobster';
+    font-size: 60px;
+    color: darkorange;
 }
 
 .whitewine_wrap { /* 부모 box */
@@ -26,8 +35,7 @@ img{max-width: 100%; height: auto;}
 
 /* 화이트 와인 리스트 css */
 .whitewine_wrap li { /* 자식 box */
-    width: 300px;
-    margin: 0 40px;
+    flex-basis: 33.3333%;
 }
 
 .whitewine_wrap .imageList {
@@ -55,10 +63,12 @@ img{max-width: 100%; height: auto;}
 .whitewine_wrap .textList {
     margin: 20px 20px 60px;
     text-align: left;
+    font-family: 'Bitter', cursive;
 }
 
 .whitewine_wrap .textList p {
     margin-bottom: 5px;
+    font-family: 'Bitter', cursive;
 }
 
 
