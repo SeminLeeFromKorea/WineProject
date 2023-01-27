@@ -1,10 +1,80 @@
-import { Outlet } from "react-router-dom";
+import { useRef, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import styled from './Header.module.css';
+//import './general.css';
+
+
 
 const Header = () => {
-    return(
+    let nav = useNavigate();
+    const goHome = () => {
+        nav('/'); // 경로
+    }
+
+    const goBack = () => {
+        nav(-1); // 뒤로가기, +1은 앞으로 가기
+    }
+
+    const [leftSelect, setLeftSelect] = useState(false);
+    const [rightSelect, setRightSelect] = useState(false);
+
+
+    const handleLeftChild = () => {
+        setLeftSelect(!leftSelect);
+    }
+
+    const handleRightChild = () => {
+        setRightSelect(!rightSelect);
+    }
+    const [st , setSt] =useState({display:"none"});
+    const handleOn=()=>{
+        setSt({display:"block"});
+    }
+    const handleOn2=()=>{
+        setSt({display:"none"});
+        
+    }
+
+    return (
         <>
-        헤더
-        <Outlet/>
+            <header className={styled.HeaderBySemin}>
+                <div className={styled.HeaderBySemin_left}>
+                    <button className={styled.HeaderBySemin_leftchildbtn}><img style={{ width: '60px' }} src={'/wine.png'}></img></button>
+                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleLeftChild}><p>레드와인</p>
+                        <li className={!leftSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>목록보기</span></li>
+                        <li className={!leftSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>안주추천</span></li>
+                    </ul>
+                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleRightChild}><p>화이트와인</p>
+                        <li className={!rightSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>목록보기</span></li>
+                        <li className={!rightSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>안주추천</span></li>
+                    </ul>
+                    <div className={`${styled.search}`}>
+                        <input className={`${styled.searchInput}`} placeholder="검색어를 입력해주세요" />
+                        <button className={`${styled.searchBtn}`}><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgzNnYzNkgweiIvPgogICAgICAgIDxnIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Im0yNi4wODEgMjYuMDgxLTQuMTItNC4xMk0xNi40NjcgMjMuMzM0YTYuODY3IDYuODY3IDAgMSAwIDAtMTMuNzM0IDYuODY3IDYuODY3IDAgMCAwIDAgMTMuNzM0eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="></img></button>
+                    </div>
+                </div>
+                <div className={styled.HeaderBySemin_left}>
+                    <p className={styled.category} onMouseOver={handleOn} >三 카테고리</p>
+                    
+                </div>
+
+            </header>
+                <div className={styled.hiddenBox}>
+                    <ul className={styled.hiddenCategory} style={st} onMouseOver={handleOn} onMouseOut={handleOn2}>
+                        <li>111111</li>
+                        <li>1111</li>
+                        <li>111111</li>
+                        <li>11111</li>
+                        <li>1111</li>
+                        <li>1111</li>
+                        <li>1111</li>
+                        <li>111111</li>
+                    </ul>
+                </div>
+            <section>
+                {/* 헤더 하위의 라우터 표현 */}
+                <Outlet />
+            </section>
         </>
     )
 }
