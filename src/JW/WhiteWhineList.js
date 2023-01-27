@@ -22,7 +22,7 @@ const WhiteWineList = ( {data} ) => {
         sessionStorage.setItem('detail', JSON.stringify({'img': e.target.src,
                                                         'info': arr})
                               );
-        navigate("/detail");
+        navigate("/whitedetail");
         
     }
 

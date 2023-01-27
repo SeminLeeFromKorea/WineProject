@@ -3,15 +3,21 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './layout/Home';
 import Layout from './layout/Layout';
 import WhiteWineDetail from './JW/WhiteWineDetail';
+import WhiteWineAPI from './JW/WhiteWineAPI';
+import RedWineAPI from './SY/RedWineAPI';
 
 function App() {
   return (
     <>
       <Routes>
-        <Route element={<Layout/>}>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/detail' element={<WhiteWineDetail/>}/>
-        </Route>
+        <Route path='/' element={<Home/>}/>
+          <Route element={<Layout/>}>
+            <Route path='/white' element={<WhiteWineAPI/>}/>
+            <Route path='/red' element={<RedWineAPI/>}/>
+
+            <Route path='/whitedetail' element={<WhiteWineDetail/>}/>
+            
+          </Route>
       </Routes>
       
     </>

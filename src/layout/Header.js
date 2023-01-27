@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import styled from './Header.module.css';
 //import './general.css';
 
@@ -39,13 +39,13 @@ const Header = () => {
         <>
             <header className={styled.HeaderBySemin}>
                 <div className={styled.HeaderBySemin_left}>
-                    <button className={styled.HeaderBySemin_leftchildbtn}><img style={{ width: '60px' }} src={'/wine.png'}></img></button>
+                    <button className={styled.HeaderBySemin_leftchildbtn}><Link to ="/" style={{color:'white'}}><img style={{ width: '60px' }} src={'/wine.png'}></img></Link></button>
                     <ul className={styled.HeaderBySemin_leftchild} onClick={handleLeftChild}><p>레드와인</p>
-                        <li className={!leftSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>목록보기</span></li>
+                        <li className={!leftSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to ='/red' style={{color:'white'}}><span>목록보기</span></Link></li>
                         <li className={!leftSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>안주추천</span></li>
                     </ul>
                     <ul className={styled.HeaderBySemin_leftchild} onClick={handleRightChild}><p>화이트와인</p>
-                        <li className={!rightSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>목록보기</span></li>
+                        <li className={!rightSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to ='/white' style={{color:'white'}}><span>목록보기</span></Link></li>
                         <li className={!rightSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>안주추천</span></li>
                     </ul>
                     <div className={`${styled.search}`}>
@@ -61,14 +61,11 @@ const Header = () => {
             </header>
                 <div className={styled.hiddenBox}>
                     <ul className={styled.hiddenCategory} style={st} onMouseOver={handleOn} onMouseOut={handleOn2}>
-                        <li>111111</li>
-                        <li>1111</li>
-                        <li>111111</li>
-                        <li>11111</li>
-                        <li>1111</li>
-                        <li>1111</li>
-                        <li>1111</li>
-                        <li>111111</li>
+                        <li><Link to ="/" style={{color:'white'}}>HOME</Link></li>
+                        <li><Link to ='/red' style={{color:'white'}}>RedWine</Link></li>
+                        <li><Link to ='/white' style={{color:'white'}}>WhiteWine</Link></li>
+                        <li>Sparkling</li>
+                        <li>Rose</li>
                     </ul>
                 </div>
             <section>
