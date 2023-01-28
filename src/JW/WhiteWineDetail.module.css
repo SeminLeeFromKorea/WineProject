@@ -1,0 +1,41 @@
+* {font-family: 'NanumSquareNeo-Variable';}
+a {text-decoration: none;}
+img{max-width: 100%; height: auto;}
+
+.detail_header {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.titleText {
+    font-size: 20px;
+    margin: 0 20px;
+}
+
+.titleName {
+    font-size: 40px;
+    color: rgb(26, 195, 201);
+    font-weight: bolder;
+}
+
+.article_top {
+    text-align: center;
+    margin: 100px 0;
+}
+
+.article_top img {
+    filter: drop-shadow(4px 4px 4px rgb(194, 194, 194));
+    margin-bottom: 60px;
+}
+
+.article_top .place {
+    font-size: 16px;
+    color: tomato;
+}
+
+.article_bottom article{
+    font-size: 60px;
+    height: 3000px;
+    text-align: center;
+}
+

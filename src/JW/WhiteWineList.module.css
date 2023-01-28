@@ -1,17 +1,14 @@
-/* 화이트 와인 api css  */
-* {margin: 0 auto; padding: 0; list-style: none; }
 a {text-decoration: none;}
 img{max-width: 100%; height: auto;}
 
-/* font-family: 'Bitter', serif;
+/* 
+font-family: 'Bitter', serif;
 font-family: 'Lobster', cursive;
 font-family: 'Nanum Gothic', sans-serif;
 font-family: 'Permanent Marker', cursive;
-font-family: 'Ubuntu', sans-serif; */
-
-.loading { /* ※중간으로 처리 못함 */
-    height: 1000px;
-}
+font-family: 'Ubuntu', sans-serif;
+font-family: 'NanumSquareNeo-Variable';
+ */
 
 .whitewine_container {
     margin: 0 300px;
@@ -44,32 +41,37 @@ font-family: 'Ubuntu', sans-serif; */
     filter: drop-shadow(4px 4px 4px rgb(136, 136, 136));
 }
 
-.whitewine_wrap li img {
+.whitewine_wrap .imageList img {
     object-fit: cover;
     transition: all 0.2s linear;
     margin: 0 auto;
 }
 
-.whitewine_wrap li img:hover {
+.whitewine_wrap .imageList img:hover {
     transform: scale(1.05);
-}
-
-
-.whitewine_wrap li a {
-    /* text-align: center;  ※ 글씨 중간으로 안 가짐*/
-    color: black;
 }
 
 .whitewine_wrap .textList {
     margin: 20px 20px 60px;
     text-align: left;
-    font-family: 'Bitter', cursive;
 }
 
 .whitewine_wrap .textList p {
     margin-bottom: 5px;
     font-family: 'Bitter', cursive;
+    letter-spacing: 1px;
 }
+
+.whitewine_wrap .textList .nameList {
+    font-size: 20px;
+    font-weight: bold;
+    color:#5f0080;
+}
+
+.whitewine_wrap .textList .LocationList {
+    font-weight: bold;
+}
+
 
 
 
