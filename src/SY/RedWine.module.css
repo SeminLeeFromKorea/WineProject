@@ -1,4 +1,4 @@
-/* 화이트 와인 api css  */
+/* 레드 와인 api css  */
 * {margin: 0 auto; padding: 0; list-style: none; box-sizing: border-box;} 
 a {text-decoration: none;}
 img{max-width: 100%; height: auto;}
@@ -20,31 +20,28 @@ font-family: 'Ubuntu', sans-serif; */
 
 .redwine_container h3 {
     margin: 30px 0;
+    font-family: 'Lobster';
+    font-size: 60px;
+    color: darkorange;
 }
 
 .redwine_wrap { /* 부모 box */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* text-align: center; */
     align-content: space-between;
 }
 
 
 
-/* 화이트 와인 리스트 css */
+/* 레드 와인 리스트 css */
 .redwine_wrap li { /* 자식 box */
-    display: inline-block;
-    width: 300px;
     flex-basis: 33.333%;
-    padding: 0 40px;
 }
 
 .redwine_wrap .imageList {
     padding: 50px 0;
     filter: drop-shadow(4px 4px 4px rgb(136, 136, 136)); /* 이미지그림자주기 */
-    /* border: 1px solid rgb(202, 202, 202); */
-    /* overflow: hidden; */
 }
 
 /* 호버:이미지 확대 */
@@ -57,13 +54,24 @@ font-family: 'Ubuntu', sans-serif; */
 
 
 /* p태그디자인 */
-.redwine_wrap .textList { margin: 20px 20px 60px; text-align: left; padding-left: 20px;}
-.redwine_wrap .textList p { margin-bottom: 5px; }
+.redwine_wrap .textList { 
+    margin: 20px 20px 60px; 
+    text-align: left; 
+}
+.redwine_wrap .textList p { 
+    margin-bottom: 5px; 
+    font-family: 'Bitter', cursive;
+    letter-spacing: 1px;
+}
+
+.redwine_wrap .textList .nameList{
+    font-size: 20px;
+    font-weight: bold;
+    color: #5f0080;
+}
+
+.redwine_wrap .textList .locationList{
+    font-weight: bold;
+}
 
 
-/* **************상세페이지************* */
-/* .detail_wrap {
-    width: 1050px;
-    margin: 0 auto;
-    padding-top: 30px;
-} */
