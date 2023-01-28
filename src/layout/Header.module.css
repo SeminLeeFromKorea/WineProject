@@ -20,7 +20,7 @@
     float: left;
     overflow: hidden;
     color: white;
-    margin: 0 30%;
+    margin: 0 300px;
 }
 
 .HeaderBySemin .HeaderBySemin_left .HeaderBySemin_leftchildbtn {
@@ -61,7 +61,7 @@
 .search {
     position: absolute;
     top: 100px;
-    right: 500px;
+    right: 300px;
     margin-left: 50px;
     width: 400px;
     height: 50px;
@@ -106,7 +106,7 @@
 .hiddenCategory {
     position: absolute;
     top:0;
-    left:465px;
+    left:310px;
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 1000;
@@ -114,6 +114,7 @@
 }
 
 .hiddenCategory li {
+    padding-left: 10px;
     background-color: #5f0080;
     height: 30px;
     width: 100px;
@@ -127,4 +128,24 @@
     position: relative;
     
 
+}
+
+.topbutton {
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    overflow: hidden;
+    background-color: #5f0080;
+    color: white;
+    cursor: pointer;
+}
+
+.topbutton span {
+    float: right;
+    margin-right: 7px;
+    margin-top: 15px;
 }
