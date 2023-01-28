@@ -11,14 +11,14 @@
     z-index: 1000;
     background-color: #5f0080;
     height: 13%;
-    padding-top: 10px;
+    padding-top: 25px;
 }
 
 .HeaderBySemin {
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 200px;
+    height: 150px;
     margin-top: 10px;
     z-index: 1000;
     background-color: #5f0080;
@@ -49,7 +49,6 @@
     font-size: 20px;
 }
 
-
 .HeaderBySemin .HeaderBySemin_left .HeaderBySemin_lefthiddenchild_default {
     display: none;
 }
@@ -57,6 +56,7 @@
 .HeaderBySemin .HeaderBySemin_left .HeaderBySemin_lefthiddenchild_clicked {
     cursor: pointer;
     display: block;
+    margin-top: 3px;
 }
 
 .HeaderBySemin_lefthiddenchild_clicked span {
@@ -69,14 +69,15 @@
 
 .search {
     position: absolute;
-    top: 100px;
+    top: 0;
     right: 300px;
     margin-left: 50px;
     width: 400px;
     height: 50px;
+    z-index: 1000;
     background-color: white;
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 25px;
     overflow: hidden;
 }
 
@@ -142,8 +143,8 @@
 .topbutton {
     border: 1px solid white;
     border-radius: 100%;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     position: fixed;
     right: 100px;
     bottom: 100px;
@@ -155,6 +156,6 @@
 
 .topbutton span {
     float: right;
-    margin-right: 7px;
-    margin-top: 15px;
+    margin-right: 18px;
+    margin-top: 25px;
 }
