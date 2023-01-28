@@ -16,6 +16,17 @@ const WhiteWineDetail = () => {
         setVisible(true);
     }
 
+    const [ex, setEx] = useState(true);
+
+    const handleEx = (e) => {
+        if(e.target.innerHTML === "리뷰") {
+            setEx(false);
+        } else if (e.target.innerHTML === "상세 페이지"){
+            setEx(true);
+        }
+
+    }
+
     return (
         <>
         <div className={styled.detail_header}>
@@ -40,13 +51,21 @@ const WhiteWineDetail = () => {
 
                 <button>좋아요</button>
             </div>
-            <div>
-                
+            <div className={styled.page_wrap}>
+                <button className={styled.page_btn} onClick={handleEx}>상세 페이지</button>
+                <button className={styled.page_btn} onClick={handleEx}>리뷰</button>
             </div>
         </section>
 
         {/* 하위 상세페이지 */}
         <section className={styled.article_bottom}>
+            <div>{!ex ? <article>
+                    <h3>리뷰</h3>
+            </article> : <article>
+                    <h3>상세 페이지</h3>
+            </article>}</div>
+
+
             <article>
                     <h3>이것이 바로 화이트와인 종류</h3>
             </article>
@@ -56,6 +75,8 @@ const WhiteWineDetail = () => {
             <article>
                     <h3>뭘ㅏㄲ요~~~</h3>
             </article>
+
+
         </section>
         </>
     )

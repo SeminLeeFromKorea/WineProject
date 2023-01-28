@@ -33,9 +33,16 @@ img{max-width: 100%; height: auto;}
     color: tomato;
 }
 
+.article_top .page_wrap {
+    margin: 100px;
+}
+
+.article_top .page_wrap .page_btn {
+    
+}
+
 .article_bottom article{
     font-size: 60px;
     height: 3000px;
     text-align: center;
 }
-
