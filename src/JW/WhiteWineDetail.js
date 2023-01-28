@@ -40,6 +40,9 @@ const WhiteWineDetail = () => {
 
                 <button>좋아요</button>
             </div>
+            <div>
+                
+            </div>
         </section>
 
         {/* 하위 상세페이지 */}

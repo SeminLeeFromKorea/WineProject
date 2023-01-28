@@ -60,6 +60,7 @@ font-family: 'NanumSquareNeo-Variable';
     transition: all 0.2s linear;
     margin: 0 auto;
     height: 260px;
+    filter: brightness(105%) ;
 }
 
 .whitewine_wrap .imageList img:hover {
