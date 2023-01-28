@@ -21,49 +21,68 @@ const Header = () => {
     const [fourSelect, setFourSelect] = useState(false);
 
 
-    const handleOneChild = () => {
-        setOneSelect(!oneSelect);
+
+    const handleChild = (e) => {
+
+        console.log(e.target.innerHTML);
+        if (e.target.innerHTML === "레드와인") {
+            setOneSelect(!oneSelect);
+            setTwoSelect(false);
+            setThreeSelect(false);
+            setFourSelect(false);
+        } else if (e.target.innerHTML === "화이트와인") {
+            setOneSelect(false);
+            setTwoSelect(!twoSelect);
+            setThreeSelect(false);
+            setFourSelect(false);
+        } else if (e.target.innerHTML === "스파클링") {
+            setOneSelect(false);
+            setTwoSelect(false);
+            setThreeSelect(!threeSelect);
+            setFourSelect(false);
+        } else if (e.target.innerHTML === "로제") {
+            setOneSelect(false);
+            setTwoSelect(false);
+            setThreeSelect(false);
+            setFourSelect(!fourSelect);
+        }
     }
 
-    const handleTwoChild = () => {
-        setTwoSelect(!twoSelect);
+
+
+
+    const [st, setSt] = useState({ display: "none" });
+    const handleOn = () => {
+        setSt({ display: "block" });
+    }
+    const handleOn2 = () => {
+        setSt({ display: "none" });
+
     }
 
-    const handleThreeChild = () => {
-        setThreeSelect(!threeSelect);
-    }
-
-    const handleFourChild = () => {
-        setFourSelect(!fourSelect);
-    }
-    const [st , setSt] =useState({display:"none"});
-    const handleOn=()=>{
-        setSt({display:"block"});
-    }
-    const handleOn2=()=>{
-        setSt({display:"none"});
-        
-    }
+    const goToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth"});
+    };
 
     return (
         <>
             <header className={styled.HeaderBySemin}>
                 <div className={styled.HeaderBySemin_left}>
-                    <button className={styled.HeaderBySemin_leftchildbtn}><Link to ="/" style={{color:'white'}}><img style={{ width: '60px' }} src={'/wine.png'}></img></Link></button>
-                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleOneChild}><p>레드와인</p>
-                        <li className={!oneSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to ='/red' style={{color:'white'}}><span>목록보기</span></Link></li>
+                    <button className={styled.HeaderBySemin_leftchildbtn}><Link to="/" style={{ color: 'white' }}><img style={{ width: '60px' }} src={'/wine.png'}></img></Link></button>
+                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleChild}><p>레드와인</p>
+                        <li className={!oneSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to='/red' style={{ color: 'white' }}><span>목록보기</span></Link></li>
                         <li className={!oneSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>안주추천</span></li>
                     </ul>
-                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleTwoChild}><p>화이트와인</p>
-                        <li className={!twoSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to ='/white' style={{color:'white'}}><span>목록보기</span></Link></li>
+                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleChild}><p>화이트와인</p>
+                        <li className={!twoSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to='/white' style={{ color: 'white' }}><span>목록보기</span></Link></li>
                         <li className={!twoSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>안주추천</span></li>
                     </ul>
-                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleThreeChild}><p>스파클링</p>
-                        <li className={!threeSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to ='/red' style={{color:'white'}}><span>목록보기</span></Link></li>
+                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleChild}><p>스파클링</p>
+                        <li className={!threeSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to='/red' style={{ color: 'white' }}><span>목록보기</span></Link></li>
                         <li className={!threeSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>안주추천</span></li>
                     </ul>
-                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleFourChild}><p>로제</p>
-                        <li className={!fourSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to ='/red' style={{color:'white'}}><span>목록보기</span></Link></li>
+                    <ul className={styled.HeaderBySemin_leftchild} onClick={handleChild}><p>로제</p>
+                        <li className={!fourSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to='/red' style={{ color: 'white' }}><span>목록보기</span></Link></li>
                         <li className={!fourSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>안주추천</span></li>
                     </ul>
                     <div className={`${styled.search}`}>
@@ -72,20 +91,25 @@ const Header = () => {
                     </div>
                 </div>
                 <div className={styled.HeaderBySemin_left}>
-                    <p className={styled.category} onMouseOver={handleOn} >三 카테고리</p>
-                    
+                    <p className={styled.category} onClick={handleOn} >三 카테고리</p>
+
                 </div>
 
             </header>
-                <div className={styled.hiddenBox}>
-                    <ul className={styled.hiddenCategory} style={st} onMouseOver={handleOn} onMouseOut={handleOn2}>
-                        <li><Link to ="/" style={{color:'white'}}>HOME</Link></li>
-                        <li><Link to ='/red' style={{color:'white'}}>RedWine</Link></li>
-                        <li><Link to ='/white' style={{color:'white'}}>WhiteWine</Link></li>
-                        <li>Sparkling</li>
-                        <li>Rose</li>
-                    </ul>
-                </div>
+            <div className={styled.hiddenBox}>
+                <ul className={styled.hiddenCategory} style={st} onMouseOver={handleOn} onMouseOut={handleOn2}>
+                    <li><Link to="/" style={{ color: 'white' }}>HOME</Link></li>
+                    <li><Link to='/red' style={{ color: 'white' }}>RedWine</Link></li>
+                    <li><Link to='/white' style={{ color: 'white' }}>WhiteWine</Link></li>
+                    <li>Sparkling</li>
+                    <li>Rose</li>
+                </ul>
+            </div>
+
+            <div className={styled.topbutton} onClick={goToTop}>
+                <span>TOP</span>
+            </div>
+
             <section>
                 {/* 헤더 하위의 라우터 표현 */}
                 <Outlet />
