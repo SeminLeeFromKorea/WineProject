@@ -12,10 +12,12 @@ font-family: 'NanumSquareNeo-Variable';
 
 .whitewine_container {
     text-align: center;
+    /* line-height: 200px  ; */
+    margin: 0 300px;
 }
 
 .whitewine_container .whitewinelist_title {
-    margin: 60px;
+    margin: 60px 0;
     font-size: 60px;
     color: darkorange;
     background-image: url('img/s3.jpg');
