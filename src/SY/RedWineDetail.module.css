@@ -1,0 +1,52 @@
+/* 레드 와인 detail css  */
+* {margin: 0 auto; padding: 0; list-style: none; box-sizing: border-box;} 
+a {text-decoration: none;}
+img{max-width: 100%; height: auto;}
+
+/* font-family: 'Bitter', serif;
+font-family: 'Lobster', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Ubuntu', sans-serif; */
+
+/* **************상세페이지************* */
+.detail_wrap {
+    margin: 0 300px;
+    text-align: center;     
+    padding-top: 30px;
+}
+
+/* 상단 와인사진 */
+.detailImg_wrap {
+    text-align: center;
+    margin: 40px 0px;
+}
+
+/* 상단 와인 이름 */
+.detailNameList {
+    font-family: 'Bitter';
+    font-size: 40px;
+    font-weight: bolder;
+}
+.detailTitle {
+    font-size: 20px;
+    margin: 0 20px;
+
+}
+
+
+/* .detailInfo_wrap{
+    display: flex;
+    flex-direction: row;
+} */
+
+.detailInfo {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;    
+}
+
+.detailInfo > li {
+    flex-basis: 100px;
+    flex-grow: 0;
+}
