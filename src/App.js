@@ -6,6 +6,7 @@ import WhiteWineDetail from './JW/WhiteWineDetail';
 import WhiteWineAPI from './JW/WhiteWineAPI';
 import RedWineAPI from './SY/RedWineAPI';
 import RedWineDetail from './SY/RedWineDetail';
+import MapAPI from './SM/MapAPI';
 
 function App() {
   return (
@@ -18,8 +19,8 @@ function App() {
 
             <Route path='/whitedetail' element={<WhiteWineDetail/>}/>
             <Route path='/redDetail' element={<RedWineDetail/>}/>
-            
           </Route>
+        {/* <Route path='/map' element={<MapAPI/>}></Route> */}
       </Routes>
       
     </>

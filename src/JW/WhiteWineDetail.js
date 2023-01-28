@@ -1,6 +1,7 @@
 import styled from './WhiteWineDetail.module.css';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import MapAPI from '../SM/MapAPI';
 
 const WhiteWineDetail = () => {
 
@@ -9,6 +10,11 @@ const WhiteWineDetail = () => {
     const whiteInfo = JSON.parse(wine); //변수에 받아서 파싱
     // console.log(whiteInfo.info);
  
+    const [visible, setVisible] = useState(false);
+
+    const handleMap = () => {
+        setVisible(true);
+    }
 
     return (
         <>
@@ -29,7 +35,10 @@ const WhiteWineDetail = () => {
                 <p>{whiteInfo.info[2]}</p> {/* 와이너리 */}
                 <p>{whiteInfo.info[3]}</p> {/* 평점 */}
                 <p>{whiteInfo.info[4]}</p> {/* 리뷰어 */}
-                <button>지도</button>
+                {/* <button><Link to="/map">지도</Link></button> */}
+                <button onClick={handleMap}>{visible ? null : "지도보이기"}</button>
+                { visible ? <MapAPI/> : null }
+
                 <button>좋아요</button>
             </div>
         </section>
