@@ -35,7 +35,6 @@ const WhiteWineDetail = () => {
                 <p>{whiteInfo.info[2]}</p> {/* 와이너리 */}
                 <p>{whiteInfo.info[3]}</p> {/* 평점 */}
                 <p>{whiteInfo.info[4]}</p> {/* 리뷰어 */}
-                {/* <button><Link to="/map">지도</Link></button> */}
                 <button onClick={handleMap}>{visible ? null : "지도보이기"}</button>
                 { visible ? <MapAPI/> : null }
 

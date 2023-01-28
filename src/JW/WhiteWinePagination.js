@@ -41,7 +41,7 @@ const WhiteWinePagination = ({ postsPerPage, totalPosts, paginate }) => {
     pageNumbers.push(i);
   }
   return (
-    <div style={{marginBottom: '200px'}}>
+    <div style={{margin: '50px 0 150px 0'}}>
       <nav style={{textAlign: 'center'}}>
         <PageUl className="pagination">
           {pageNumbers.map((number) => (
