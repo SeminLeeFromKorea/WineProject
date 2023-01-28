@@ -25,29 +25,30 @@ const WhiteWineList = ( {data} ) => {
         
         <>
             <div className={styled.whitewine_container}>
-            <h3> WhiteWine List </h3>
-            <img src={require('./img/1.jpg')}/>
-            <ul className={styled.whitewine_wrap}>
-            
-                {
-                    data.map( (item) =>  /* 데이터 60개만 가져옴 */
-                    <li key={item.id}>
-                            <div className={styled.imageList}>
-                                <img src={item.image} alt={item.wine} onClick={handleClick}/>
-                            </div>
-                            <div className={styled.textList}>
-                                {/* <p>{item.id}</p> */}
-                                <p className={styled.nameList}>{item.wine}</p>
-                                <p className={styled.LocationList}>{item.location}</p>
-                                <p className={styled.wieryList}>{item.winery}</p>
-                                <p className={styled.avgList}>{item.rating.average}</p>
-                                <p className={styled.reviewList}>{item.rating.reviews}</p>
-                            </div>
-                        </li>
-                    )
-                }
+                <div className={styled.whitewinelist_title}>
+                    <h3> WhiteWine List </h3>
+                    {/* <img src={require('./img/s3.jpg')}/> */}
+                </div>
 
-            </ul>
+                <ul className={styled.whitewine_wrap}>
+                    {
+                        data.map( (item) =>  /* 데이터 60개만 가져옴 */
+                        <li key={item.id}>
+                                <div className={styled.imageList}>
+                                    <img src={item.image} alt={item.wine} onClick={handleClick}/>
+                                </div>
+                                <div className={styled.textList}>
+                                    {/* <p>{item.id}</p> */}
+                                    <p className={styled.nameList}>{item.wine}</p>
+                                    <p className={styled.LocationList}>{item.location}</p>
+                                    <p className={styled.wieryList}>{item.winery}</p>
+                                    <p className={styled.avgList}>{item.rating.average}</p>
+                                    <p className={styled.reviewList}>{item.rating.reviews}</p>
+                                </div>
+                            </li>
+                        )
+                    }
+                </ul>
             </div>
         </>
     )
