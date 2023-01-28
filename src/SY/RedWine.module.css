@@ -3,15 +3,19 @@
 a {text-decoration: none;}
 img{max-width: 100%; height: auto;}
 
+/* font-family: 'Bitter', serif;
+font-family: 'Lobster', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Ubuntu', sans-serif; */
+
 .loading { /* ※중간으로 처리 못함 */
     height: 1000px;
 }
 
 .redwine_container {
     margin: 0 300px;
-    text-align: center;
-    
-    
+    text-align: center;       
 }
 
 .redwine_container h3 {
