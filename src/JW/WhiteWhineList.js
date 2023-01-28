@@ -42,7 +42,7 @@ const WhiteWineList = ( {data} ) => {
                                     <p className={styled.nameList}>{item.wine}</p>
                                     <p className={styled.LocationList}>{item.location}</p>
                                     <p className={styled.wieryList}>{item.winery}</p>
-                                    <p className={styled.avgList}>{item.rating.average}</p>
+                                    <p className={styled.avgList}>⭐️{item.rating.average}</p>
                                     <p className={styled.reviewList}>{item.rating.reviews}</p>
                                 </div>
                             </li>
