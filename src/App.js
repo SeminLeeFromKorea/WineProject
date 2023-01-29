@@ -7,6 +7,7 @@ import WhiteWineAPI from './JW/WhiteWineAPI';
 import RedWineAPI from './SY/RedWineAPI';
 import RedWineDetail from './SY/RedWineDetail';
 import MapAPI from './SM/MapAPI';
+import SearchBySemin from './SM/SearchBySemin';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route element={<Layout/>}>
             <Route path='/white' element={<WhiteWineAPI/>}/>
             <Route path='/red' element={<RedWineAPI/>}/>
-
+            <Route path='/search' element={<SearchBySemin/>}/>
             <Route path='/whitedetail' element={<WhiteWineDetail/>}/>
             <Route path='/redDetail' element={<RedWineDetail/>}/>
           </Route>
