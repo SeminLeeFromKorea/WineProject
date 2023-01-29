@@ -25,8 +25,6 @@ const RedWineAPI2 = () => {
     getData();
   }, []);
 
-  console.log(data);
-
   if(loading === false){ /* 로딩 마크 */
   return <div>
       <PuffLoader

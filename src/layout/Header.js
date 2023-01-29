@@ -62,7 +62,6 @@ const Header = () => {
     const { state, action } = useContext(SearchContext);
     const goSearch = () => {
         action.setSearch({ search: search });
-
     }
 
 
