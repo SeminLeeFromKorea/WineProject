@@ -15,7 +15,7 @@ const Home = () => {
         <div className={`${styled.section}  ${styled.firstImg}`}>
             <div className={styled.txt_wrap}>
 				<div className={styled.txt_box}>
-					<p className={styled.txt_boxfont}>Red Wine</p>
+					<p className={styled.txt_boxfont} >Red Wine</p>
 				</div>
 			</div>
         </div>
@@ -24,7 +24,7 @@ const Home = () => {
         <div className={`${styled.section}  ${styled.secondImg}`}>
             <div className={styled.txt_wrap}>
 				<div className={styled.txt_box}>
-                    <p className={styled.txt_boxfont}>White Wine</p>
+                    <p className={styled.txt_boxfont} style={{color:'#fff'}}>White Wine</p>
 				</div>
 			</div>
         </div>
