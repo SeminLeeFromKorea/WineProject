@@ -19,11 +19,11 @@ a{text-decoration: none;}
 }
 
 .firstImg {
-    background-image: url(/public/5.jpg);
+    background-image: url(/public/r11.jpg);
 }
 
 .secondImg {
-    background-image: url(/public/s1.jpg);
+    background-image: url(/public/5.jpg);
 }
 
 .txt_wrap {
@@ -40,16 +40,17 @@ a{text-decoration: none;}
 .txt_box {
     display: table-cell;
     vertical-align: middle;
+    
 }
 
 .txt_boxfont{
-    font-size: 40px;
-    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    color: #e00522;
     line-height: 16;
-    text-transform: uppercase;
-    transition: all 0.3s;
+    text-shadow: -1px 0 #3f3f3f, 0 1px #3f3f3f, 1px 0 #3f3f3f, 0 -1px #3f3f3f;
 }
-
 
 /* .txt-box > span{    
     display: block;
