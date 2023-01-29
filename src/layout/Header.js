@@ -54,16 +54,30 @@ const Header = () => {
     };
 
     const [search, setSearch] = useState();
+    const searchInput = useRef(null);
+    const searchButton = useRef(null);
 
-    const handleSearch = (e) => {
-        setSearch(e.target.value);
+    const navigate = useNavigate();
+    const onEnterInput = () => {
+        navigate(`/search`);
+    };
+
+    const handleSearch = () => {
+        setSearch(searchInput.current.value);
     }
-    
+
     const { state, action } = useContext(SearchContext);
     const goSearch = () => {
         action.setSearch({ search: search });
     }
 
+    const enterSearch = (e) => {
+        if (e.keyCode === 13) {
+            handleSearch();
+            goSearch();
+            onEnterInput();
+        }
+    }
 
     return (
         <>
@@ -92,9 +106,9 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className={`${styled.search}`}>
-                        <input className={`${styled.searchInput}`} placeholder="검색어를 입력해주세요" onChange={handleSearch}/>
+                        <input className={`${styled.searchInput}`} placeholder="검색어를 입력해주세요" onChange={handleSearch} onKeyDown={enterSearch} ref={searchInput} />
                         <Link to='/search'>
-                            <button className={`${styled.searchBtn}`} onClick={goSearch}><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgzNnYzNkgweiIvPgogICAgICAgIDxnIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Im0yNi4wODEgMjYuMDgxLTQuMTItNC4xMk0xNi40NjcgMjMuMzM0YTYuODY3IDYuODY3IDAgMSAwIDAtMTMuNzM0IDYuODY3IDYuODY3IDAgMCAwIDAgMTMuNzM0eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="></img></button>
+                            <button className={`${styled.searchBtn}`} onClick={goSearch} ref={searchButton}><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgzNnYzNkgweiIvPgogICAgICAgIDxnIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Im0yNi4wODEgMjYuMDgxLTQuMTItNC4xMk0xNi40NjcgMjMuMzM0YTYuODY3IDYuODY3IDAgMSAwIDAtMTMuNzM0IDYuODY3IDYuODY3IDAgMCAwIDAgMTMuNzM0eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="></img></button>
                         </Link>
                     </div>
                 </div>
