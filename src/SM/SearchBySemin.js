@@ -7,7 +7,7 @@ import WhiteWineAPI2 from "./WhiteWineAPI2";
 const SearchBySemin = () => {
 
     const { state, action } = useContext(SearchContext);
-
+    
 
     return (
             <>

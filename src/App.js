@@ -8,10 +8,12 @@ import RedWineAPI from './SY/RedWineAPI';
 import RedWineDetail from './SY/RedWineDetail';
 import MapAPI from './SM/MapAPI';
 import SearchBySemin from './SM/SearchBySemin';
+import { SearchProvider } from './SM/ContextAPI';
 
 function App() {
   return (
     <>
+    <SearchProvider>
       <Routes>
         <Route path='/' element={<Home/>}/>
           <Route element={<Layout/>}>
@@ -23,7 +25,7 @@ function App() {
           </Route>
         {/* <Route path='/map' element={<MapAPI/>}></Route> */}
       </Routes>
-      
+    </SearchProvider>
     </>
   );
 }
