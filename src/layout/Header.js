@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import styled from './Header.module.css';
+import SearchContext, { SearchProvider } from "../SM/ContextAPI";
 //import './general.css';
 
 
@@ -23,8 +24,6 @@ const Header = () => {
 
 
     const handleChild = (e) => {
-
-        console.log(e.target.innerHTML);
         if (e.target.innerHTML === "레드와인") {
             setOneSelect(!oneSelect);
             setTwoSelect(false);
@@ -54,12 +53,28 @@ const Header = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
+    const [search, setSearch] = useState();
+
+    const handleSearch = (e) => {
+        setSearch(e.target.value);
+    }
+    
+    const { state, action } = useContext(SearchContext);
+    const goSearch = () => {
+        action.setSearch({ search: search });
+
+    }
+
+
     return (
         <>
             <header className={styled.HeaderBySemin}>
                 <div className={styled.fixedHeader}>
                     <div className={styled.HeaderBySemin_left}>
-                        <button className={styled.HeaderBySemin_leftchildbtn}><Link to="/" style={{ color: 'white' }}><img style={{ width: '60px' }} src={'/wine.png'}></img></Link></button>
+                        {/* <button className={styled.HeaderBySemin_leftchildbtn}> */}
+                        <Link to="/" style={{ color: 'white' }} className={styled.HeaderBySemin_leftchildbtn}><img className={styled.HeaderLogo} style={{ width: '80px' }} src={'/realwinelogo2.png'}></img>
+                        </Link>
+                        {/* </button> */}
                         <ul className={styled.HeaderBySemin_leftchild} onClick={handleChild}><p style={{ fontFamily: 'Nanum Gothic' }}>레드와인</p>
                             <li className={!oneSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><Link to='/red' style={{ color: 'white' }}><span>목록보기</span></Link></li>
                             <li className={!oneSelect ? styled.HeaderBySemin_lefthiddenchild_default : styled.HeaderBySemin_lefthiddenchild_clicked}><span>안주추천</span></li>
@@ -78,8 +93,10 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className={`${styled.search}`}>
-                        <input className={`${styled.searchInput}`} placeholder="검색어를 입력해주세요" />
-                        <button className={`${styled.searchBtn}`}><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgzNnYzNkgweiIvPgogICAgICAgIDxnIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Im0yNi4wODEgMjYuMDgxLTQuMTItNC4xMk0xNi40NjcgMjMuMzM0YTYuODY3IDYuODY3IDAgMSAwIDAtMTMuNzM0IDYuODY3IDYuODY3IDAgMCAwIDAgMTMuNzM0eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="></img></button>
+                        <input className={`${styled.searchInput}`} placeholder="검색어를 입력해주세요" onChange={handleSearch}/>
+                        <Link to='/search'>
+                            <button className={`${styled.searchBtn}`} onClick={goSearch}><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgzNnYzNkgweiIvPgogICAgICAgIDxnIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Im0yNi4wODEgMjYuMDgxLTQuMTItNC4xMk0xNi40NjcgMjMuMzM0YTYuODY3IDYuODY3IDAgMSAwIDAtMTMuNzM0IDYuODY3IDYuODY3IDAgMCAwIDAgMTMuNzM0eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="></img></button>
+                        </Link>
                     </div>
                 </div>
                 {/* <div className={styled.HeaderBySemin_left}>
