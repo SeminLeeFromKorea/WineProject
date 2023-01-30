@@ -12,7 +12,6 @@ font-family: 'NanumSquareNeo-Variable';
 
 .whitewine_container {
     text-align: center;
-    margin: 0 300px;
 }
 
 .whitewine_container .whitewinelist_title {
@@ -37,6 +36,7 @@ font-family: 'NanumSquareNeo-Variable';
 }
 
 .whitewine_wrap { /* 부모 box */
+    margin: 0 300px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -75,13 +75,14 @@ font-family: 'NanumSquareNeo-Variable';
 }
 
 .whitewine_wrap .textList p {
-    padding: 5px 20px;
-    font-family: 'Bitter', cursive;
+    padding: 0 20px;
+    /* font-family: 'Bitter', cursive; */
     font-size: 14px;
     letter-spacing: 2px;
 }
 
 .whitewine_wrap .textList .nameList {
+    font-family: 'Bitter', cursive;
     font-size: 20px;
     font-weight: bold;
     color:#5f0080;
@@ -98,7 +99,7 @@ font-family: 'NanumSquareNeo-Variable';
 
 .whitewine_wrap .textList .avgList{
     position: absolute;
-    bottom: -20px;
+    bottom: -40px;
     left:0;
     color: rgb(223, 15, 0);
     font-weight: 800;
@@ -106,8 +107,8 @@ font-family: 'NanumSquareNeo-Variable';
 
 .whitewine_wrap .textList .reviewList{
     position: absolute;
-    bottom: -20px;
-    left: 60px;
+    bottom: -40px;
+    left: 90px;
 }
 
 

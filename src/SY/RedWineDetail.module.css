@@ -29,6 +29,7 @@ font-family: 'Ubuntu', sans-serif; */
 
 .detailImg_wrap img{
   width: 110px;
+  filter: drop-shadow(4px 4px 4px rgb(194, 194, 194));
 }
 
 /* 상단 와인 이름 */
@@ -207,7 +208,7 @@ font-family: 'Ubuntu', sans-serif; */
     width: 100%;
     text-align: left;
     font-size: 55px;
-    background: linear-gradient(-45deg, #5f0080 25%, #7e4c8f 25%, #7e4c8f 50%, #5f0080 50%, #5f0080 75%, #7e4c8f 75%, #7e4c8f);
+    background: linear-gradient(-45deg, #5f0080 25%, #b353d3 25%, #b353d3 50%, #5f0080 50%, #5f0080 75%, #b353d3 75%, #b353d3);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 20px 20px;
