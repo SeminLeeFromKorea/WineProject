@@ -12,11 +12,10 @@ font-family: 'NanumSquareNeo-Variable';
 
 .whitewine_container {
     text-align: center;
-    margin: 0 300px;
 }
 
 .whitewine_container .whitewinelist_title {
-    margin: 80px 0;
+    margin: 80px;
     font-size: 60px;
     /* color: #ffa600; */
     color: #ffffff;
@@ -37,6 +36,7 @@ font-family: 'NanumSquareNeo-Variable';
 }
 
 .whitewine_wrap { /* 부모 box */
+    margin: 0 300px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -76,12 +76,13 @@ font-family: 'NanumSquareNeo-Variable';
 
 .whitewine_wrap .textList p {
     padding: 5px 20px;
-    font-family: 'Bitter', cursive;
     font-size: 14px;
     letter-spacing: 2px;
+    /* font-family: 'Bitter', cursive; */
 }
 
 .whitewine_wrap .textList .nameList {
+    font-family: 'Bitter', cursive;
     font-size: 20px;
     font-weight: bold;
     color:#5f0080;

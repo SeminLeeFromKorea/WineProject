@@ -191,8 +191,8 @@ const MapAPI = () => {
                 height: '500px'
             }}>
             </div>
-            <div>{UserAddr}</div>
-            <button onClick={handlePostCode} id="findAddrBtn" disabled={false}>주소찾기</button>
+            <div className={styled.user_address}>{UserAddr}</div>
+            <button onClick={handlePostCode} id="findAddrBtn" disabled={false} className={styled.search_btn}>주소찾기</button>
             { }
         </>
     )
