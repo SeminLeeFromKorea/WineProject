@@ -27,8 +27,8 @@ const RedWineAPI = () => {
   console.log(data);
 
   if(loading === false){ /* 로딩 마크 */
-  return <div>
-      <PuffLoader
+  return <div style={{height: '800px', position: 'relative'}}>
+      <PuffLoader style={{position:'absolute', marginTop: '15%', marginLeft: '45%'}}
       color="#36d7b7"
       cssOverride={{}}
       loading
@@ -51,9 +51,8 @@ const RedWineAPI = () => {
  
 
   return (
-    <div className={styled.redwine_container}>
-      <RedWineDetail/>
-      <h3>레드와인 구매창?</h3>
+    <div>
+    
       <RedWineList data={currentPosts(data)}/>
       {/* <RedWineList data={data}/> */}
            

@@ -1,6 +1,7 @@
 /* global kakao */
 import React, { useEffect, useState } from "react";
 import { MapList } from "./MapList";
+import styled from './MapAPI.module.css';
 
 const { kakao, daum } = window;
 const MapAPI = () => {
@@ -185,13 +186,13 @@ const MapAPI = () => {
     return (
         <>
 
-            <div id="map" style={{
+            <div className={styled.map} id="map" style={{
                 width: '500px',
                 height: '500px'
             }}>
             </div>
-            <div>{UserAddr}</div>
-            <button onClick={handlePostCode} id="findAddrBtn" disabled={false}>주소찾기</button>
+            <div className={styled.user_address}>{UserAddr}</div>
+            <button onClick={handlePostCode} id="findAddrBtn" disabled={false} className={styled.search_btn}>주소찾기</button>
             { }
         </>
     )

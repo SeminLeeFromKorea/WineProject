@@ -5,7 +5,6 @@ const App = () => {
     // 추후 App2로 바꿔줘야 함
     return(
         <>
-        <Header/>
         <MapAPI/>
         </>
     )
