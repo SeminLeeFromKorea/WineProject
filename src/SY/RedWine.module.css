@@ -9,7 +9,7 @@ font-family: 'Nanum Gothic', sans-serif;
 font-family: 'Permanent Marker', cursive;
 font-family: 'Ubuntu', sans-serif; */
 
-.loading { /* ※중간으로 처리 못함 */
+.loading { 
     height: 1000px;
 }
 
@@ -19,12 +19,39 @@ font-family: 'Ubuntu', sans-serif; */
 }
 
 .redwine_container h3 {
-    margin: 30px 0;
-    font-family: 'Lobster';
-    font-size: 60px;
-    color: darkorange;
+    height: 100px;
+    line-height: 100px;
+    
+}
+.topImgWrap{
+    background: rgba(0, 0, 0, 0.5) url('./img/3.jpg');
+    background-repeat: no-repeat;
+    height: 320px;
+    line-height: 320px;
+    background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
+    background-position-y: -150px;
+    margin: 80px 0;
+    font-family:'Bitter';
+    font-size: 70px;
+    color: #ffffff;
+    text-shadow: 5px 5px darkred, 8px 8px rgb(133, 28, 28), 11px 11px rgb(131, 42, 42);
+    position: relative;
+    
 }
 
+
+
+.orangeBox {
+    position: absolute;
+    border: 3px solid darkred;
+    height: 192px;
+    width: 650px;
+    top: 66px;
+    left: 320px;
+
+}
 .redwine_wrap { /* 부모 box */
     display: flex;
     flex-direction: row;
@@ -49,6 +76,7 @@ font-family: 'Ubuntu', sans-serif; */
     object-fit: cover;
     transition: all 0.2s linear;
     margin: 0 auto;
+    height: 260px;
 }
 .redwine_wrap li img:hover {transform: scale(1.05);}
 
@@ -57,21 +85,54 @@ font-family: 'Ubuntu', sans-serif; */
 .redwine_wrap .textList { 
     margin: 20px 20px 60px; 
     text-align: left; 
+    padding: 0px 15px;
+    position: relative;
 }
 .redwine_wrap .textList p { 
     margin-bottom: 5px; 
     font-family: 'Bitter', cursive;
     letter-spacing: 1px;
+    padding: 0px 10px;
+   
 }
 
 .redwine_wrap .textList .nameList{
     font-size: 20px;
     font-weight: bold;
     color: #5f0080;
+    border-top: solid rgb(131, 131, 131) 1px;
+    padding-top: 10px;
 }
 
 .redwine_wrap .textList .locationList{
     font-weight: bold;
+    font-size: 15px;
+    color: rgb(71, 71, 71);
+}
+
+.redwine_wrap .textList .wineryList {
+    color: #777;
 }
 
 
+
+.redwine_wrap .textList .avgList{
+    position: absolute;
+    bottom: -30px;
+    left:11;
+    color: rgb(223, 15, 0);
+    font-weight: 800;
+}
+
+.redwine_wrap .textList .reviews{
+    position: absolute;
+    bottom: -30px;
+    left: 75px;
+    color: #777;
+}
+
+.zollim{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}

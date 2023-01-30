@@ -46,7 +46,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
 
     return (
         <div>
-        <nav style={{overflow:'hidden', textAlign: 'center'}}>
+        <nav style={{overflow:'hidden', textAlign: 'center', margin: '100px 0px 50px 0px'}}>
           <PageUl className="pagination">
             {pageNumbers.map((number) => (
               <PageLi key={number} className="page-item">

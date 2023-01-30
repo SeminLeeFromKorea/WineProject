@@ -1,5 +1,4 @@
 import styled from './RedWine.module.css';
-import RedWineDetail from './RedWineDetail';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -10,10 +9,10 @@ const RedWineList =  ( {data} ) => {
     /* 상세페이지(온클릭이벤트) */
     const handleClick = (e)=>{
         const pTag = e.target.parentElement.nextElementSibling.children;
-        // console.log(pTag);
+        console.log(pTag);
 
         const pTag_arr = [];
-        for(let i = 1; i < pTag.length; i++){
+        for(let i = 0; i < pTag.length; i++){
             pTag_arr.push(pTag[i].innerHTML);
         }
         // console.log(pTag_arr);
@@ -23,13 +22,21 @@ const RedWineList =  ( {data} ) => {
                               );
         
         navigate("/redDetail");
+
+
+    
         
        
     }
     
      return (
         <div className={styled.redwine_container}>
-            <h3> RedWine List </h3>
+            
+            <div className={styled.topImgWrap}>
+            RedWine List 
+            <div className={styled.orangeBox}/>
+            </div>
+            <div></div>
             <ul className={styled.redwine_wrap}>
                 {data.map( (item) => 
                     <li key={item.id} >
@@ -41,7 +48,7 @@ const RedWineList =  ( {data} ) => {
                                 <p className={styled.nameList}>{item.wine}</p>
                                 <p className={styled.locationList}>{item.location}</p>
                                 <p className={styled.wineryList}>{item.winery}</p>
-                                <p className={styled.avgList}>{item.rating.average}</p>
+                                <p className={styled.avgList}>⭐️{item.rating.average}</p>
                                 <p className={styled.reviews}>{item.rating.reviews}</p>
                             </div>
                     </li>
