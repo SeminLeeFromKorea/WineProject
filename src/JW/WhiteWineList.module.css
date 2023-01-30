@@ -75,7 +75,7 @@ font-family: 'NanumSquareNeo-Variable';
 }
 
 .whitewine_wrap .textList p {
-    padding: 5px 20px;
+    padding: 0 20px;
     font-size: 14px;
     letter-spacing: 2px;
     /* font-family: 'Bitter', cursive; */
@@ -99,7 +99,7 @@ font-family: 'NanumSquareNeo-Variable';
 
 .whitewine_wrap .textList .avgList{
     position: absolute;
-    bottom: -20px;
+    bottom: -40px;
     left:0;
     color: rgb(223, 15, 0);
     font-weight: 800;
@@ -107,8 +107,8 @@ font-family: 'NanumSquareNeo-Variable';
 
 .whitewine_wrap .textList .reviewList{
     position: absolute;
-    bottom: -20px;
-    left: 60px;
+    bottom: -40px;
+    left: 90px;
 }
 
 
